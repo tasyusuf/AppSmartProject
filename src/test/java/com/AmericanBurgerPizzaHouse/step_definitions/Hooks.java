@@ -1,6 +1,7 @@
-package com.EnjoyPizza.step_definitions;
+package com.AmericanBurgerPizzaHouse.step_definitions;
 
-import com.EnjoyPizza.utilities.Driver;
+import com.AmericanBurgerPizzaHouse.utilities.ConfigurationReader;
+import com.AmericanBurgerPizzaHouse.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -14,6 +15,7 @@ public class Hooks {
 
     @Before
     public void setUp(){
+        Driver.get().manage().window().maximize();
         Driver.get().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 

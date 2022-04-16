@@ -1,4 +1,4 @@
-package com.EnjoyPizza.runners;
+package com.AmericanBurgerPizzaHouse.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"html:target/failed-html-report"},
         features = "@target/rerun.txt",
-        glue = "com/EnjoyPizza/step_definitions"
+        glue = "com/AmericanBurgerPizzaHouse/step_definitions"
 )
 public class FailedTestRunner {
 }

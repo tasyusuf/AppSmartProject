@@ -1,6 +1,6 @@
-package com.EnjoyPizza.pages;
+package com.AmericanBurgerPizzaHouse.pages;
 
-import com.EnjoyPizza.utilities.Driver;
+import com.AmericanBurgerPizzaHouse.utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {

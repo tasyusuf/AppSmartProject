@@ -1,4 +1,4 @@
-package com.EnjoyPizza.runners;
+package com.AmericanBurgerPizzaHouse.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports",
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
-        glue = "com/EnjoyPizza/step_definitions",
+        glue = "com/AmericanBurgerPizzaHouse/step_definitions",
         dryRun = false,
         tags = "@wip"
 )
