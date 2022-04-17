@@ -96,7 +96,7 @@ Feature: Main Page features
       |Pizza         |
       |chicken       |
 
-  @wip
+
   Scenario Outline: Search function with invalid products
     When user search a desired "<desiredProduct>"
     Then search result is shown for "<desiredProduct>"

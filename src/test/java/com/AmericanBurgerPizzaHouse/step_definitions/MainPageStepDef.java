@@ -20,7 +20,7 @@ public class MainPageStepDef {
 
     MainPage mainPage = new MainPage();
 
-    protected String ChoosenLanguage;
+    protected String choosenLanguage;
 
     @Given("user is on the main page")
     public void user_is_on_the_main_page() {
@@ -30,7 +30,7 @@ public class MainPageStepDef {
 
     @When("user clicks the language abbreviation on the main page")
     public void user_clicks_the_language_abbreviation_on_the_main_page() {
-        ChoosenLanguage = mainPage.LanguageDropdown.getText();
+        choosenLanguage = mainPage.LanguageDropdown.getText();
         mainPage.LanguageDropdown.click();
         //BrowserUtils.waitFor(1);
     }
@@ -50,7 +50,7 @@ public class MainPageStepDef {
 
     @And("language abbreviation changes")
     public void languageAbbreviationChanges() {
-        Assert.assertFalse(ChoosenLanguage.contains(mainPage.LanguageDropdown.getText()));
+        Assert.assertFalse(choosenLanguage.contains(mainPage.LanguageDropdown.getText()));
     }
 
     @When("user see the menu options below")
@@ -76,7 +76,7 @@ public class MainPageStepDef {
     public void menuTitleDisplaysGetränkeAlkoholfrei() {
         String ActualTitle = mainPage.GetrankeTitle.getText();
         String ExpectedTitle = "Getränke | Alkoholfrei";
-        Assert.assertEquals("Titles ar matching", ExpectedTitle, ActualTitle);
+        Assert.assertEquals("Titles are matching", ExpectedTitle, ActualTitle);
     }
 
     @When("user clicks {string} on the menu table")
