@@ -10,7 +10,6 @@ Feature: Main Page features
       |English EN |
       |Polski PL  |
       |Česky CS   |
-
     Then user choose the language
     And language abbreviation changes
 
@@ -54,7 +53,6 @@ Feature: Main Page features
       Then menu title displays Getränke | Alkoholfrei
       And user clicks the "<desiredSection>" tab
       Then menu title contains "<desiredSectionTitle>"
-
       Examples:
         |desiredSection       |desiredSectionTitle   |
         |Alkoholfrei          |Alkoholfrei           |
@@ -65,7 +63,6 @@ Feature: Main Page features
     Scenario Outline: User can click a menu and see the foods under <desiredFoodMenu>
       When user clicks "<desiredFoodMenu>" on the menu table
       Then the title displays "<desiredFoodTitle>"
-
       Examples:
         |desiredFoodMenu      |desiredFoodTitle   |
         |American Burger      |American Burger      |
@@ -93,12 +90,12 @@ Feature: Main Page features
     Scenario Outline: Search function with valid products
       When user search a desired "<desiredProduct>"
       Then search result is shown for "<desiredProduct>"
-
       Examples:
       |desiredProduct|
       |Burger        |
       |Pizza         |
       |chicken       |
+
   @wip
   Scenario Outline: Search function with invalid products
     When user search a desired "<desiredProduct>"
