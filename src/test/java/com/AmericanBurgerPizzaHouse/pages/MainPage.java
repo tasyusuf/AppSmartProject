@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -20,7 +21,27 @@ public class MainPage extends BasePage{
     @FindBy(xpath = "//div[@id='app-wrapper']/div/div[2]/div/div/div/div[2]/ul/li")
     public List<WebElement> AllLanguages;
 
-    public List<String> getElementText(){
+    @FindBy(xpath = "//div[@id='app-wrapper']/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/a")
+    public List<WebElement> ActualMenuOptions;
+
+
+    @FindBy(xpath = "//body/div[@id='app']/div[@id='app-wrapper']/div[1]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    public WebElement angeboteTitle;
+
+    @FindBy(xpath = "//div[contains(text(),'Getränke | Alkoholfrei')]")
+    public WebElement GetrankeTitle;
+
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "//div[contains(text(),'Sorry, no products were found.')]")
+    public WebElement EmptySearchResultText;
+
+    @FindBy(xpath = "//div[@id='app-wrapper']/div[1]/div[2]/div[3]/div[1]/div[1]/div[2]/div[2]")
+    public WebElement ResetSearchButton;
+
+
+    public List<String> getLanguageText(){
         String[] split = LanguageList.getText().split("\n");
         return Arrays.asList(split);
     }
@@ -47,6 +68,21 @@ public class MainPage extends BasePage{
 
     }
 
+    public WebElement clicktheMenu(String option){
+        return Driver.get().findElement(By.linkText(option));
+    }
+
+    public WebElement getMenuTitle(String option){
+        return Driver.get().findElement(By.xpath("//div[contains(text(),'"+option+"')]"));
+    }
+
+    public WebElement clicktheGetrankeMenu(String option){
+        return Driver.get().findElement(By.xpath("//span[contains(text(),'"+option+"')]"));
+    }
+
+    public WebElement searchResultText(String Option){
+        return Driver.get().findElement(By.xpath("//div[contains(text(),\"Search results for '"+Option+"'\")]"));
+    }
 
     }
 
