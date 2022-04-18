@@ -7,6 +7,8 @@ import io.cucumber.java.en.Then;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
@@ -32,6 +34,7 @@ public class ApiCheckStepDef {
 
         Assert.assertEquals(response.statusCode(), 200);
         Assert.assertEquals(response.contentType(), "application/json; charset=utf-8");
+        Assert.assertEquals(response.getHeader("Connection"), "Keep-Alive");
 
         List<String> actualMenuOptions = response.path("d.name");
         Assert.assertEquals(expectedMenuOptions, actualMenuOptions);
