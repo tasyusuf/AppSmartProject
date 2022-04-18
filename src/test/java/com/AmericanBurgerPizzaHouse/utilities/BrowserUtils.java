@@ -29,4 +29,5 @@ public class BrowserUtils {
         WebDriverWait wait = new WebDriverWait(Driver.get(), timeToWaitInSec);
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
 }
