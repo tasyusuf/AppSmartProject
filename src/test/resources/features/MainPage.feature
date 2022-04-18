@@ -1,3 +1,7 @@
+#4.	Feature File it is a Cuscumber framework where
+# my feature files hold the BDD scenarios,
+#which are created using Gherkin language
+
 Feature: Main Page features
 
   Background:

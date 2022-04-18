@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class PurchasePage extends BasePage{
-
+    //locators related to purchase steps
     @FindBy(xpath = "//div[2]/div/div[6]/div/div")
     public WebElement deliveryPickUpPopUp;
 
@@ -79,23 +79,26 @@ public class PurchasePage extends BasePage{
     public List<WebElement> nachosOptions;
 
 
-
+    /*
+        @param option
+        this method takes the product name as parameter and returns Webelement
+    */
     public WebElement menuProducts(String option){
         return Driver.get().findElement(By.xpath("//h5[contains(text(),'"+option+"')]"));
     }
-
+    //this method converts subtotal price text to double
     public double getSubtotalPrice(){
         String subPrice = subtotalPrice.getText().substring(0, subtotalPrice.getText().length() - 2);
         subPrice = subPrice.replace(",", ".");
         return Double.parseDouble(subPrice);
     }
-
+    //this method converts discount text to double
     public double getdiscountrate(){
         String discountPrice = discount.getText().substring(1, discount.getText().length() - 1);
         discountPrice = discountPrice.replace(",", ".");
         return Double.parseDouble(discountPrice);
     }
-
+    //this method converts total price text to double
     public double getTotalPrice(){
         String totPrice = totalPrice.getText().substring(0, totalPrice.getText().length() - 2);
         totPrice = totPrice.replace(",", ".");

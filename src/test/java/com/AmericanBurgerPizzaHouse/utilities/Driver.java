@@ -14,6 +14,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 
 public class Driver {
+    //preventing creation of driver object
     private Driver() {
     }
     // InheritableThreadLocal  --> this is like a container, bag, pool.

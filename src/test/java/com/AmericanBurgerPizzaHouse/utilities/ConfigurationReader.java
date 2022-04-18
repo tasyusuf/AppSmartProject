@@ -13,9 +13,16 @@ public class ConfigurationReader {
     static {
 
         try {
+            //which file to read
             String path = "configuration.properties";
+
+            //reads the file into java
             FileInputStream input = new FileInputStream(path);
+
+            //properties -> this class store properties in key / value format
             properties = new Properties();
+
+            //the values from the input is loaded/ fed into the properties object
             properties.load(input);
 
             input.close();
