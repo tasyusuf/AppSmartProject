@@ -11,7 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
-//before and after suites will execute before and after of each tet case..
+//before and after suites will execute before and after of each tet case...
 
     @Before
     public void setUp(){
