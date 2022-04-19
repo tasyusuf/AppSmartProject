@@ -1,4 +1,3 @@
-@wip
 Feature: UI Menu Data Match with API
   Background:
     Given user is on the main page

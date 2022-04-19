@@ -1,7 +1,7 @@
 #4.	Feature File it is a Cuscumber framework where
 # my feature files hold the BDD scenarios,
 #which are created using Gherkin language
-@wip
+
 Feature: Main Page features
 
   Background:
@@ -91,7 +91,7 @@ Feature: Main Page features
       |Muffins              |Muffins              |
       |Eis Cream            |Eis Cream            |
 
-  #@smoke
+@smoke
   Scenario Outline: Search function with valid products
     When user search a desired "<desiredProduct>"
     Then search result is shown for "<desiredProduct>"

@@ -18,7 +18,7 @@ Path of step definitions and “tags” which will run.
         features = "src/test/resources/features",
         glue = "com/AmericanBurgerPizzaHouse/step_definitions",
         dryRun = false,
-        tags = "@wip"
+        tags = "@smoke"
 )
 public class CukesRunner {
 

@@ -1,9 +1,8 @@
-@wip
 Feature: Purchase function
 
   Background:
     Given user is on the main page
- # @smoke
+@smoke
   Scenario: User add some products to Shopping Cart
     When user clicks "Burger" on the menu table
     And user click "Hamburger" tab
