@@ -57,18 +57,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.intuit.karate</groupId>
-            <artifactId>karate-apache</artifactId>
-            <version>0.9.6</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.intuit.karate</groupId>
-            <artifactId>karate-junit4</artifactId>
-            <version>0.9.6</version>
-            <scope>test</scope>
-        </dependency>
 
     </dependencies>
 
