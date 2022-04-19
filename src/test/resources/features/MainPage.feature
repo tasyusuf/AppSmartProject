@@ -1,7 +1,7 @@
 #4.	Feature File it is a Cuscumber framework where
 # my feature files hold the BDD scenarios,
 #which are created using Gherkin language
-
+@wip
 Feature: Main Page features
 
   Background:
@@ -44,57 +44,58 @@ Feature: Main Page features
       |Getränke             |
 
 
-    Scenario: User can click the Angebote and see the campaigns
-      When user clicks "Angebote" on main menu table
-      Then menu title displays Angebote
+  Scenario: User can click the Angebote and see the campaigns
+    When user clicks "Angebote" on main menu table
+    Then menu title displays Angebote
 
-    Scenario: User can click the Getränke and see the drinks
-      When user clicks "Getränke" on main menu table
-      Then menu title displays Getränke | Alkoholfrei
+  Scenario: User can click the Getränke and see the drinks
+    When user clicks "Getränke" on main menu table
+    Then menu title displays Getränke | Alkoholfrei
 
-    Scenario Outline: User can click the four section under Getränke menu <desiredSection>
-      When user clicks "Getränke" on main menu table
-      Then menu title displays Getränke | Alkoholfrei
-      And user clicks the "<desiredSection>" tab
-      Then menu title contains "<desiredSectionTitle>"
-      Examples:
-        |desiredSection       |desiredSectionTitle   |
-        |Alkoholfrei          |Alkoholfrei           |
-        |Bier                 |Bier                  |
-        |Weine                |Weine                 |
-        |Spirituosen          |Spirituosen           |
+  Scenario Outline: User can click the four section under Getränke menu <desiredSection>
+    When user clicks "Getränke" on main menu table
+    Then menu title displays Getränke | Alkoholfrei
+    And user clicks the "<desiredSection>" tab
+    Then menu title contains "<desiredSectionTitle>"
+    Examples:
+      |desiredSection       |desiredSectionTitle   |
+      |Alkoholfrei          |Alkoholfrei           |
+      |Bier                 |Bier                  |
+      |Weine                |Weine                 |
+      |Spirituosen          |Spirituosen           |
 
-    Scenario Outline: User can click a menu and see the foods under <desiredFoodMenu>
-      When user clicks "<desiredFoodMenu>" on the menu table
-      Then the title displays "<desiredFoodTitle>"
-      Examples:
-        |desiredFoodMenu      |desiredFoodTitle   |
-        |American Burger      |American Burger      |
-        |American Big Burger  |American Big Burger  |
-        |Burger               |Burger               |
-        |Chicken-Burger       |Chicken-Burger       |
-        |Vegetarian Burger    |Vegetarian Burger    |
-        |Finger Food          |Finger Food          |
-        |Special Box          |Special Box          |
-        |Fries & Sides        |Fries & Sides        |
-        |Dips & Sauce         |Dips & Sauce         |
-        |Hot Dogs             |Hot Dogs             |
-        |Wraps                |Wraps                |
-        |Nachos               |Nachos               |
-        |Maiskolben           |Maiskolben           |
-        |Pizzabrot            |Pizzabrot            |
-        |Pizza                |Pizza                |
-        |Pasta                |Pasta                |
-        |Popcorn              |Popcorn              |
-        |Dessert              |Dessert              |
-        |Salate               |Salate               |
-        |Muffins              |Muffins              |
-        |Eis Cream            |Eis Cream            |
+  Scenario Outline: User can click a menu and see the foods under <desiredFoodMenu>
+    When user clicks "<desiredFoodMenu>" on the menu table
+    Then the title displays "<desiredFoodTitle>"
+    Examples:
+      |desiredFoodMenu      |desiredFoodTitle   |
+      |American Burger      |American Burger      |
+      |American Big Burger  |American Big Burger  |
+      |Burger               |Burger               |
+      |Chicken-Burger       |Chicken-Burger       |
+      |Vegetarian Burger    |Vegetarian Burger    |
+      |Finger Food          |Finger Food          |
+      |Special Box          |Special Box          |
+      |Fries & Sides        |Fries & Sides        |
+      |Dips & Sauce         |Dips & Sauce         |
+      |Hot Dogs             |Hot Dogs             |
+      |Wraps                |Wraps                |
+      |Nachos               |Nachos               |
+      |Maiskolben           |Maiskolben           |
+      |Pizzabrot            |Pizzabrot            |
+      |Pizza                |Pizza                |
+      |Pasta                |Pasta                |
+      |Popcorn              |Popcorn              |
+      |Dessert              |Dessert              |
+      |Salate               |Salate               |
+      |Muffins              |Muffins              |
+      |Eis Cream            |Eis Cream            |
 
-    Scenario Outline: Search function with valid products
-      When user search a desired "<desiredProduct>"
-      Then search result is shown for "<desiredProduct>"
-      Examples:
+  #@smoke
+  Scenario Outline: Search function with valid products
+    When user search a desired "<desiredProduct>"
+    Then search result is shown for "<desiredProduct>"
+    Examples:
       |desiredProduct|
       |Burger        |
       |Pizza         |

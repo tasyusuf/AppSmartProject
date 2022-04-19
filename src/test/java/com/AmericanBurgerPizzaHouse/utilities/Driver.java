@@ -17,16 +17,17 @@ public class Driver {
     //preventing creation of driver object
     private Driver() {
     }
-    // InheritableThreadLocal  --> this is like a container, bag, pool.
-    // in this pool we can have separate objects for each thread
-    // for each thread, in InheritableThreadLocal we can have separate object for that thread
-    // driver class will provide separate webdriver object per thread
+    /**
+    we use InheritableThreadLocal object to save driver object specific to each thread separately, so that Driver class can return the thread's own driver.
+     */
     private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
     public static WebDriver get() {
         //if this thread doesn't have driver - create it and add to pool
         if (driverPool.get() == null) {
-    //if we pass the driver from terminal then use that one
-    //if we do not pass the driver from terminal then use the one properties file
+    /**
+    if we pass the driver from terminal then use that one
+    if we do not pass the driver from terminal then use the one properties file
+     */
             String browser = System.getProperty("browser") != null ? browser = System.getProperty("browser") : ConfigurationReader.get("browser");
             switch (browser) {
                 case "chrome":
@@ -68,7 +69,7 @@ public class Driver {
         return driverPool.get();
     }
 
-    //close the driver after task is done
+    //close the driver after execution is done
     public static void closeDriver() {
         driverPool.get().quit();
         driverPool.remove();

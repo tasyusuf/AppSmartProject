@@ -79,7 +79,7 @@ public class PurchasePage extends BasePage{
     public List<WebElement> nachosOptions;
 
 
-    /*
+    /**
         @param option
         this method takes the product name as parameter and returns Webelement
     */

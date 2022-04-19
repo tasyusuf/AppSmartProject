@@ -66,28 +66,28 @@ public class MainPage extends BasePage{
         return language;
     }
 
-    /*
+    /**
     @param option
     this method takes the menu name as parameter and returns Webelement
      */
     public WebElement clicktheMenu(String option){
         return Driver.get().findElement(By.linkText(option));
     }
-    /*
+    /**
         @param option
         this method takes the menu name as parameter and returns title Webelement
     */
     public WebElement getMenuTitle(String option){
         return Driver.get().findElement(By.xpath("//div[contains(text(),'"+option+"')]"));
     }
-    /*
+    /**
             @param option
             this method takes the sub-menu name of Getranke as parameter and returns webelement of Getranke sub-menu
     */
     public WebElement clicktheGetrankeMenu(String option){
         return Driver.get().findElement(By.xpath("//span[contains(text(),'"+option+"')]"));
     }
-    /*
+    /**
                 @param option
                 this method takes the searching item as parameter and returns title of search result
     */

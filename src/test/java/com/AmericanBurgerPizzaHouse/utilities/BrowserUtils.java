@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BrowserUtils {
 
-    /*
+    /**
      * Performs a pause
      *
      * @param seconds
@@ -22,7 +22,7 @@ public class BrowserUtils {
         }
     }
 
-    /*
+    /**
      * return a list of string from a list of elements
      *
      * @param list of webelements
@@ -36,7 +36,7 @@ public class BrowserUtils {
         return elemTexts;
     }
 
-    /*
+    /**
      * Waits for the provided element to be visible on the page
      *
      * @param element

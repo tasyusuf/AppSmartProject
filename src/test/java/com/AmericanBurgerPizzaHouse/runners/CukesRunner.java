@@ -4,7 +4,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-/*
+/**
 Cukes runner is to run my scenarios.
 It also includes cucumber options report plugins and path of feature file to trigger test cases.
 Path of step definitions and “tags” which will run.
